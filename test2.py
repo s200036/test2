@@ -2,7 +2,7 @@ import streamlit as st
 
 # 1.기계학습 모델 파일 로드
 import joblib
-model = joblib.load('linear_regression_model.pkl')
+
 
 # 2.모델 설명
 st.title('점수 예측 에이전트')
@@ -35,6 +35,7 @@ b = st.number_input(' 공부시간 입력 ', value=0.0 )     # 초기값은 0.0
 c = st.selectbox('공지확인 입력(확인한다:0, 확인하지않는다:1', [0,1])    # 0,1 중에 선택
 
 # 5.버튼(예측/분류) 만들기
+model = joblib.load('linear_regression_model.pkl')
 if st.button('점수예측'):                          # 사용자가 '점수예측' 버튼을 누르면
         input_data = [[a,b,c]]                # 사용자가 입력한 a,b,c 값을 활용하여
         p = model.predict(input_data)         # model이 예측한 값을 p에 저장한다

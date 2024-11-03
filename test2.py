@@ -38,4 +38,4 @@ c = st.selectbox('공지확인 입력(확인한다:0, 확인하지않는다:1', 
 if st.button('점수예측'):                          # 사용자가 '점수예측' 버튼을 누르면
         input_data = [[a,b,c]]                # 사용자가 입력한 a,b,c 값을 활용하여
         p = model.predict(input_data)         # model이 예측한 값을 p에 저장한다
-        st.success('인공지능의 예측 점수는',str(p))
+        st.write('인공지능의 예측 점수는',str(p))
